@@ -2,6 +2,10 @@
 
 A simple intuitive and user-friendly weather app made with the Open Weather API, Next.js and React. 
 
+➡️ Live demo 
+
+🎨 [Figma mockups](https://www.figma.com/file/rt7jUKfbi1LJWoVM5A12JS/weatherme?node-id=0%3A1)
+
 ### Installation
 
 Install the required dependencies
