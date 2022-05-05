@@ -15,6 +15,7 @@ function CarouselWithCards({ location, apiResponse, setSelectedDay }) {
       <Carousel showThumbs={false} emulateTouch={true} showStatus={false}>
         <Row>
           <DailyCard
+            
             location={location}
             apiResponse={apiResponse[0]}
             date={`${location} - Today`}

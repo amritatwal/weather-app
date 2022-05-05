@@ -8,6 +8,18 @@ A simple intuitive and user-friendly weather app made with the Open Weather API,
 
 ### Installation
 
+Create a .env.local file in the root directory and add the following keys:
+
+WEATHER_API_KEY=
+WEATHER_API_BASE=
+GEOLOCATION_API_BASE=
+GEOLOCATION_POSTCODE_BASE=
+
+NEXT_PUBLIC_WEATHER_API_KEY=
+NEXT_PUBLIC_WEATHER_API_BASE=
+NEXT_PUBLIC_GEOLOCATION_API_BASE=
+NEXT_PUBLIC_GEOLOCATION_POSTCODE_BASE=
+
 Install the required dependencies
 
 `npm install`
