@@ -77,10 +77,12 @@ export default function Searchbar({ setCurrentData }) {
   return (
     <>
       <Input
+      aria-label="Search"
         clearable
         placeholder="Search by Town or City"
         contentRight={
           <div
+          aria-label="Submit"
             onClick={() => {
               getDataFromAPI();
             }}
