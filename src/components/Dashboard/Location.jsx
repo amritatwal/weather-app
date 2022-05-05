@@ -4,7 +4,7 @@ import {Text} from "@nextui-org/react";
 const Location = ({location}) => {
   return (
       <div>
-          <Text b>{location}</Text>   
+          <Text size={30} b>{location}</Text>   
     </div>
   )
 }
