@@ -21,14 +21,10 @@ export default function Home({ data }) {
 
   // Gradients for backgrounds 
   const sunny = "linear-gradient(180deg, #2BAFD0 0%, rgba(109, 213, 237, 0.33) 100%)";
-  // const rainy = "linear-gradient(to bottom, #20002c, #cbb4d4) 100%)";
-  // const cloudy = "linear-gradient(180deg, #605656 0%, rgba(168, 165, 165, 0.46) 100%)";
 
-  // const [background, setBackground] = useState(sunny);
+  const [location, setLocation] = useState("Birmingham")
 
-  // function updateBackground() {
-  //   console.log(selectedData)
-  // }
+  const [currentData, setCurrentData] = useState(data)
 
   useEffect(() => {
     setSelectedData(() => data[selectedDay])
@@ -42,10 +38,11 @@ export default function Home({ data }) {
 
 
   console.log(data)
+  
   return (
     <Container
       css={{ background: sunny }}>
-      <Header setCurrentData={setCurrentData} />
+      <Header setLocation={setLocation} setCurrentData={setCurrentData}/>
       <TempCard selectedData={selectedData} />
       <CarouselWithCards apiResponse={currentData} setSelectedDay={setSelectedDay} />
     </Container >
