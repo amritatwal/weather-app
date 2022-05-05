@@ -12,6 +12,8 @@ import CarouselWithCards from "../src/components/CarouselWithCards.js"
 
 export default function Home({data}) {
 
+  const [location, setLocation] = useState("Birmingham")
+
   const [currentData, setCurrentData] = useState(data)
 
     //Have a state that's a number to index the data array:: selectedDay
@@ -35,7 +37,7 @@ export default function Home({data}) {
   console.log(data)
   return ( 
   <>
-  <Header setCurrentData={setCurrentData}/>
+  <Header setLocation={setLocation} setCurrentData={setCurrentData}/>
   <TempCard selectedData={selectedData}/>
   <CarouselWithCards apiResponse={currentData} setSelectedDay={setSelectedDay}/>
   </>
