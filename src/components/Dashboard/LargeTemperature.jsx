@@ -5,12 +5,12 @@ export default function LargeTemperature({ temperature }) {
     <>
       <Text
         css={{
-          color: "$primary",
-          fontSize: "$md",
+            color: "$primary",
+            fontSize: "$md"
         }}
         weight="bold"
       >
-        {Math.round(temperature)}&#176;
+          {temperature}&#176;
       </Text>
     </>
   );
