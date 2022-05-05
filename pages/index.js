@@ -1,7 +1,14 @@
 
+import { Carousel } from "antd"
 import React,{useState} from "react"
 import { useEffect } from "react"
 import Header from "../src/components/Header"
+
+import TempCard from "../src/components/TempCard"
+
+
+import CarouselWithCards from "../src/components/CarouselWithCards.js"
+
 
 export default function Home({data}) {
 
@@ -29,8 +36,8 @@ export default function Home({data}) {
   return ( 
   <>
   <Header setCurrentData={setCurrentData}/>
-  {/* <Dashboard selectedData={selectedData}/> */}
-  {/* <Carousel setSelectedDay={setSelectedDay}/> */}
+  <TempCard selectedData={selectedData}/>
+  <CarouselWithCards apiResponse={currentData} setSelectedDay={setSelectedDay}/>
   </>
   )
 

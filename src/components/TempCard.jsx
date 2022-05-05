@@ -1,6 +1,10 @@
 import { Card, Grid, Row, Text } from "@nextui-org/react";
-export default function TempCard(){
-    return (
+export default function TempCard({selectedData}){
+    const weather = selectedData.weather
+    
+  const desc = weather[0].description
+  
+  return (
         <>
            <Card hoverable>
             <Card.Body css={{ p: 0 }}>
@@ -10,7 +14,7 @@ export default function TempCard(){
               <Row wrap="wrap" justify="space-between">
                 <Text b>Real Feel text</Text>
                 <Text css={{ color: "$accents4", fontWeight: "$semibold" }}>
-                  description of the weather
+                  {desc}
                 </Text>
               </Row>
             </Card.Footer>
