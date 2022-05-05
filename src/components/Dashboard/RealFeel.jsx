@@ -1,6 +1,7 @@
 import { Text } from "@nextui-org/react";
 
 export default function RealFeel({ realFeel }) {
+    
     return (
         <>
             <Text
@@ -10,7 +11,7 @@ export default function RealFeel({ realFeel }) {
                 }}
                 weight="normal"
             >
-                Real Feel {temperature}&#176;
+                Real Feel {realFeel}&#176;
             </Text>
         </>
     );
