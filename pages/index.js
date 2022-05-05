@@ -1,49 +1,48 @@
+import { Carousel } from "antd";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import Header from "../src/components/Header";
+import TempCard from "../src/components/TempCard";
+import CarouselWithCards from "../src/components/CarouselWithCards.js";
 
-import { Carousel } from "antd"
-import React,{useState} from "react"
-import { useEffect } from "react"
-import Header from "../src/components/Header"
+export default function Home({ data }) {
+  const [location, setLocation] = useState("Birmingham");
 
-import TempCard from "../src/components/TempCard"
+  const [currentData, setCurrentData] = useState(data);
 
+  //Have a state that's a number to index the data array:: selectedDay
+  //Have a state that stores that selected data with data[selectedDay]
+  //Have a useEffect that detetcs when selectedDay changes and sets selected data to the selected data
 
-import CarouselWithCards from "../src/components/CarouselWithCards.js"
+  const [selectedDay, setSelectedDay] = useState(0);
+  const [selectedData, setSelectedData] = useState(currentData[selectedDay]);
 
+  useEffect(() => {
+    setSelectedData(() => data[selectedDay]);
+  }, [selectedDay]);
 
-export default function Home({data}) {
+  useEffect(() => {
+    //When currentData is updated with an api call, reset selected day to 0, selected data to first in the array
+    setSelectedDay(() => 0);
+    setSelectedData(() => currentData[selectedDay]);
+  }, [currentData]);
 
-  const [location, setLocation] = useState("Birmingham")
-
-  const [currentData, setCurrentData] = useState(data)
-
-    //Have a state that's a number to index the data array:: selectedDay
-    //Have a state that stores that selected data with data[selectedDay]
-    //Have a useEffect that detetcs when selectedDay changes and sets selected data to the selected data 
-
-    const [selectedDay, setSelectedDay] = useState(0)
-    const [selectedData, setSelectedData] = useState(currentData[selectedDay])
-
-    useEffect(()=>{ 
-      setSelectedData(()=>data[selectedDay])
-    },[selectedDay])
-
-    useEffect(()=>{ //When currentData is updated with an api call, reset selected day to 0, selected data to first in the array
-      setSelectedDay(()=>0)
-      setSelectedData(()=>currentData[selectedDay])
-    },[currentData])
-
-
-
-  console.log(data)
-  return ( 
-  <>
-  <Header setLocation={setLocation} setCurrentData={setCurrentData}/>
-  <TempCard selectedData={selectedData}/>
-  <CarouselWithCards apiResponse={currentData} setSelectedDay={setSelectedDay}/>
-  </>
-  )
-
-
+  console.log(data);
+  return (
+    <>
+      <Header setLocation={setLocation} setCurrentData={setCurrentData} />
+      <TempCard
+        selectedData={selectedData}
+        location={location}
+        selectedDay={selectedDay}
+      />
+      <CarouselWithCards
+        apiResponse={currentData}
+        setSelectedDay={setSelectedDay}
+        location={location}
+      />
+    </>
+  );
 }
 
 export async function getServerSideProps() {

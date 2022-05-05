@@ -11,7 +11,7 @@ function DailyCard({ location, apiResponse, date, onClick }) {
             objectFit="cover"
             src={`https://openweathermap.org/img/wn/${apiResponse.weather[0].icon}@4x.png`}
             width="%"
-            height={140}
+            height={75}
             alt={date}
           />
         </Row>

@@ -7,12 +7,15 @@ import DailyCard from "./Card";
 //npm i react-responsive-carousel
 //
 
-function CarouselWithCards({ apiResponse, setSelectedDay }) {
-  const location = "Birmingham";
-
+function CarouselWithCards({ apiResponse, setSelectedDay, location }) {
   return (
     <div className="App">
-      <Carousel showThumbs={false} emulateTouch={true} showStatus={false}>
+      <Carousel
+        showThumbs={false}
+        emulateTouch={true}
+        showStatus={false}
+        
+      >
         <Row>
           <DailyCard
             location={location}
