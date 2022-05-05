@@ -357,12 +357,11 @@ const apiResponse = {
 //
 
 function CarouselWithCards() {
-    
   const location = "Birmingham";
 
   return (
     <div className="App">
-      <Carousel showThumbs={false}>
+      <Carousel showThumbs={false} emulateTouch={true} showStatus={false}>
         <Row>
           <DailyCard
             location={location}
