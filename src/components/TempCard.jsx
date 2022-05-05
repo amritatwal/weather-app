@@ -2,7 +2,7 @@ import { Card, Grid, Row, Text } from "@nextui-org/react";
 import RealFeel from '../components/Dashboard/RealFeel'
 import LargeTemperature from '../components/Dashboard/LargeTemperature'
 import Location from '../components/Dashboard/Location'
-export default function TempCard({selectedData}){
+export default function TempCard({selectedData, location}){
   const weather = selectedData.weather
   const realFeel = selectedData.feels_like.day
   const temperature = selectedData.currentTemp

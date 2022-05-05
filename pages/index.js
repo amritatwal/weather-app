@@ -22,7 +22,7 @@ export default function Home({ data }) {
 
   
 
-  const [currentData, setCurrentData] = useState(data)
+  
 
   // Gradients for backgrounds 
   const sunny = "linear-gradient(180deg, #2BAFD0 0%, rgba(109, 213, 237, 0.33) 100%)";
@@ -30,7 +30,7 @@ export default function Home({ data }) {
 
   const [location, setLocation] = useState("Birmingham")
 
-  const [currentData, setCurrentData] = useState(data)
+  
 
   useEffect(() => {
     setSelectedData(() => data[selectedDay])
@@ -49,7 +49,7 @@ export default function Home({ data }) {
     <Container
       css={{ background: sunny }}>
       <Header setLocation={setLocation} setCurrentData={setCurrentData}/>
-      <TempCard selectedData={selectedData} />
+      <TempCard location={location} selectedData={selectedData} />
       <CarouselWithCards apiResponse={currentData} setSelectedDay={setSelectedDay} />
     </Container >
   )
