@@ -1,6 +1,6 @@
 
 import { Carousel } from "antd"
-import { Container } from "@nextui-org/react";
+import { Container, styled } from "@nextui-org/react";
 import React, { useState } from "react"
 import { useEffect } from "react"
 import Header from "../src/components/Header"
@@ -46,11 +46,11 @@ export default function Home({ data }) {
   console.log(data)
   
   return (
-    <Container
+    <Container className={styled.container}
       css={{ background: sunny }}>
       <Header setLocation={setLocation} setCurrentData={setCurrentData}/>
-      <TempCard location={location} selectedData={selectedData} />
-      <CarouselWithCards apiResponse={currentData} setSelectedDay={setSelectedDay} />
+      <TempCard selectedDay={selectedDay} location={location} selectedData={selectedData} />
+      <CarouselWithCards location={location} apiResponse={currentData} setSelectedDay={setSelectedDay} />
     </Container >
   )
 }
@@ -71,7 +71,7 @@ export async function getServerSideProps() {
     if (i === 0) {
       return v;
     }
-    v.averageTemp = day + night + eve + morn / 4;
+    v.averageTemp = day;
   });
 
   return { props: { data } };

@@ -7,8 +7,8 @@ import DailyCard from "./Card";
 //npm i react-responsive-carousel
 //
 
-function CarouselWithCards({ apiResponse, setSelectedDay }) {
-  const location = "Birmingham";
+function CarouselWithCards({ location, apiResponse, setSelectedDay }) {
+  
 
   return (
     <div className="App">
