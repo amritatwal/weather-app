@@ -1,28 +1,35 @@
 import React,{useState} from "react"
 import { useEffect } from "react"
+import Header from "../components/Header"
 
 export default function Home({data}) {
 
+  const [currentData, setCurrentData] = useState(data)
 
     //Have a state that's a number to index the data array:: selectedDay
     //Have a state that stores that selected data with data[selectedDay]
     //Have a useEffect that detetcs when selectedDay changes and sets selected data to the selected data 
 
     const [selectedDay, setSelectedDay] = useState(0)
-    const [selectedData, setSelectedData] = useState(data[selectedDay])
+    const [selectedData, setSelectedData] = useState(currentData[selectedDay])
 
-    useEffect(()=>{
+    useEffect(()=>{ 
       setSelectedData(()=>data[selectedDay])
     },[selectedDay])
+
+    useEffect(()=>{ //When currentData is updated with an api call, reset selected day to 0, selected data to first in the array
+      setSelectedDay(()=>0)
+      setSelectedData(()=>currentData[selectedDay])
+    },[currentData])
 
 
 
   console.log(data)
   return ( 
   <>
-  <Header/>
-  <Dashboard selectedData={selectedData}/>
-  <Carousel setSelectedDay={setSelectedDay}/>
+  <Header setCurrentData={setCurrentData}/>
+  {/* <Dashboard selectedData={selectedData}/> */}
+  {/* <Carousel setSelectedDay={setSelectedDay}/> */}
   </>
   )
 }
