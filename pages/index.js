@@ -34,12 +34,32 @@ export default function Home({data}) {
 
 
 
+    const [bgColor, setBgColor] = useState("green")
+
+    useEffect(()=>{
+      if(selectedData.weather[0].Main === "Clouds"){
+        setBgColor("grey")
+      }
+      if(selectedData.weather[0].Main === "Clear"){
+        setBgColor("white")
+      }
+      if(selectedData.weather[0].Main === "Rainy"){
+        setBgColor("teal")
+      }
+    },[selectedData])
   console.log(data)
   return ( 
   <>
+  <style jsx>
+    {`
+    .background{
+      background-color:${bgColor};
+    }
+    `}
+  </style>
   <Header setCurrentData={setCurrentData}/>
   <TempCard selectedData={selectedData}/>
-  <CarouselWithCards apiResponse={currentData} setSelectedDay={setSelectedDay}/>
+  <CarouselWithCards className="background" apiResponse={currentData} setSelectedDay={setSelectedDay}/>
   </>
   )
 
