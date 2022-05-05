@@ -1,3 +1,4 @@
+
 import React,{useState} from "react"
 import { useEffect } from "react"
 import Header from "../components/Header"
@@ -32,29 +33,28 @@ export default function Home({data}) {
   {/* <Carousel setSelectedDay={setSelectedDay}/> */}
   </>
   )
-}
-
-
-export async function getServerSideProps(){
-
-
-  const apiBase = process.env.WEATHER_API_BASE
-  const apiKey = process.env.WEATHER_API_KEY
-
-  const fetchString = `${apiBase}?lat=52.4862&lon=1.8904&appid=${apiKey}&units=metric`
-  const res = await fetch(fetchString)
-  const rawData = await res.json()
-  const {daily:data} = rawData
-
-  data[0].currentTemp = rawData.current.temp
-
-    data.map((v,i)=>{
-      const { day, night, eve,morn} = v.temp
-      if(i===0){return v}
-      v.averageTemp = day+night+eve+morn/4
-    })
-
-  return { props: { data } }
 
 
 }
+
+// export async function getServerSideProps() {
+//   const apiBase = process.env.WEATHER_API_BASE;
+//   const apiKey = process.env.WEATHER_API_KEY;
+
+//   const fetchString = `${apiBase}?lat=52.4862&lon=1.8904&appid=${apiKey}&units=metric`;
+//   const res = await fetch(fetchString);
+//   const rawData = await res.json();
+//   const { daily: data } = rawData;
+
+//   data[0].currentTemp = rawData.current.temp;
+
+//   data.map((v, i) => {
+//     const { day, night, eve, morn } = v.temp;
+//     if (i === 0) {
+//       return v;
+//     }
+//     v.averageTemp = day + night + eve + morn / 4;
+//   });
+
+//   return { props: { data } };
+// }
