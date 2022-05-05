@@ -19,8 +19,14 @@ export default function Home({ data }) {
   const [selectedDay, setSelectedDay] = useState(0)
   const [selectedData, setSelectedData] = useState(currentData[selectedDay])
 
+
+  
+
+  const [currentData, setCurrentData] = useState(data)
+
   // Gradients for backgrounds 
   const sunny = "linear-gradient(180deg, #2BAFD0 0%, rgba(109, 213, 237, 0.33) 100%)";
+
 
   const [location, setLocation] = useState("Birmingham")
 

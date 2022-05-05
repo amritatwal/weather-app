@@ -1,7 +1,7 @@
 import Searchbar from "./Searchbar"
 
 
-export default function Header({setCurrentData}){
+export default function Header({setCurrentData, setLocation}){
 
 
 
@@ -9,6 +9,7 @@ export default function Header({setCurrentData}){
     <h1>Weather.me</h1>
     <Searchbar
     setCurrentData={setCurrentData}
+    setLocation={setLocation}
     />
     </>)
 }
