@@ -12,6 +12,8 @@ import CarouselWithCards from "../src/components/CarouselWithCards.js"
 
 export default function Home({data}) {
 
+  
+
   const [currentData, setCurrentData] = useState(data)
 
     //Have a state that's a number to index the data array:: selectedDay
