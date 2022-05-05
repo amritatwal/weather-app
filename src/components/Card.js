@@ -1,8 +1,8 @@
 import { Card, Grid, Row, Text } from "@nextui-org/react";
 
-function DailyCard({ location, apiResponse, date }) {
+function DailyCard({ location, apiResponse, date, onClick }) {
   return (
-    <Card hoverable clickable onClick={() => console.log("ive been clicked")}>
+    <Card hoverable clickable onClick={onClick}>
       <Card.Body css={{ p: 0 }}>
         <Text h4>{date}</Text>
         <Row>

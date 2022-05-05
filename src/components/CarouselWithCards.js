@@ -4,11 +4,10 @@ import { Card, Grid, Row, Text } from "@nextui-org/react";
 
 import DailyCard from "./Card";
 
-
 //npm i react-responsive-carousel
 //
 
-function CarouselWithCards({apiResponse, setSelectedDay}) {
+function CarouselWithCards({ apiResponse, setSelectedDay }) {
   const location = "Birmingham";
 
   return (
@@ -19,16 +18,19 @@ function CarouselWithCards({apiResponse, setSelectedDay}) {
             location={location}
             apiResponse={apiResponse[0]}
             date={`${location} - Today`}
+            onClick={() => setSelectedDay(0)}
           />
           <DailyCard
             location={location}
             apiResponse={apiResponse[1]}
             date={`${location} - Tomorrow`}
+            onClick={() => setSelectedDay(1)}
           />
           <DailyCard
             location={location}
             apiResponse={apiResponse[2]}
             date={`${location} - Sat 7th May`}
+            onClick={() => setSelectedDay(2)}
           />
         </Row>
         <Row>
@@ -36,16 +38,19 @@ function CarouselWithCards({apiResponse, setSelectedDay}) {
             location={location}
             apiResponse={apiResponse[3]}
             date={`${location} - Sun 8th May`}
+            onClick={() => setSelectedDay(3)}
           />
           <DailyCard
             location={location}
             apiResponse={apiResponse[4]}
             date={`${location} - Mon 9th May`}
+            onClick={() => setSelectedDay(4)}
           />
           <DailyCard
             location={location}
             apiResponse={apiResponse[5]}
             date={`${location} - Tue 10th May`}
+            onClick={() => setSelectedDay(5)}
           />
         </Row>
         <Row>
@@ -53,16 +58,19 @@ function CarouselWithCards({apiResponse, setSelectedDay}) {
             location={location}
             apiResponse={apiResponse[6]}
             date={`${location} - Wed 11th May`}
+            onClick={() => setSelectedDay(6)}
           />
           <DailyCard
             location={location}
             apiResponse={apiResponse[7]}
             date={`${location} - Thur 12th May`}
+            onClick={() => setSelectedDay(7)}
           />
           <DailyCard
             location={location}
             apiResponse={apiResponse[0]}
             date={`${location} - Today`}
+            onClick={() => setSelectedDay(0)}
           />
         </Row>
       </Carousel>
